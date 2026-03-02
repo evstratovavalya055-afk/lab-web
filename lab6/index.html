@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа №6 - Вариант 5</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/scripts.js"></script>
+</head>
+<body>
+
+    <h2>Лабораторная работа №6</h2>
+    <h3>Вариант 5: Вычисление расстояния между двумя точками</h3>
+    
+    <div class="container">
+        <div class="formula">
+            <b>Формула:</b> d = √[(x₂ - x₁)² + (y₂ - y₁)²]
+        </div>
+
+        <form name="distanceForm">
+            <table>
+                <!-- Точка A -->
+                <tr>
+                    <td colspan="2"><b>Точка A:</b></td>
+                </tr>
+                <tr>
+                    <td>Координата X₁:</td>
+                    <td>
+                        <input type="text" name="x1" value="0" size="10" 
+                               onSelect="calculateDistance()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Координата Y₁:</td>
+                    <td>
+                        <input type="text" name="y1" value="0" size="10">
+                    </td>
+                </tr>
+                
+                <!-- Точка B -->
+                <tr>
+                    <td colspan="2"><b>Точка B:</b></td>
+                </tr>
+                <tr>
+                    <td>Координата X₂:</td>
+                    <td>
+                        <input type="text" name="x2" value="3" size="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Координата Y₂:</td>
+                    <td>
+                        <input type="text" name="y2" value="4" size="10">
+                    </td>
+                </tr>
+                
+                <!-- Результат -->
+                <tr>
+                    <td><b>Расстояние:</b></td>
+                    <td>
+                        <input type="text" name="result" size="15" readonly
+                               style="background-color:#e8e8e8; font-weight:bold;">
+                    </td>
+                </tr>
+                
+                <!-- Кнопка сброса -->
+                <tr>
+                    <td colspan="2" style="text-align:center; padding-top:20px;">
+                        <input type="reset" value="Очистить все поля" 
+                               onClick="document.distanceForm.result.value=''">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+
+        <div class="info">
+            <b>Событие:</b> onSelect — вычисление происходит при выделении текста 
+            в поле X₁ (щелкните и выделите значение мышкой или клавишами)
+        </div>
+    </div>
+    
+
+    <p style="color:#666; font-size:12px; margin-top:10px;">
+        <i>* Согласно варианту 5: "расстояние между двумя точками вычисляется 
+        в результате выделения текста в первом текстовом поле (координата X₁)"</i>
+    </p>
+
+</body>
+</html>
