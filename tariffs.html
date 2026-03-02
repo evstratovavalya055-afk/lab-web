@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobiOperator - Тарифы</title>
+    <!-- Для всех страниц, кроме главной, используем общий style.css -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <h1>Mobi<span class="highlight">Operator</span></h1>
+            <p>Наши тарифы</p>
+        </div>
+    </header>
+
+    <nav id="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="tariffs.html" class="active">Тарифы</a></li>
+                <li><a href="index.html#payment">Оплата</a></li>
+                <li><a href="support.html">Поддержка</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h2>Выберите свой тариф</h2>
+            <div class="tariffs-grid">
+                <!-- Карточка тарифа 1. Используем несколько классов. -->
+                <div class="tariff-card popular">
+                    <h3>Тариф "Безлимитный"</h3>
+                    <p class="price">990 ₽/мес</p>
+                    <ul class="tariff-features">
+                        <li>Безлимитный интернет</li>
+                        <li>1000 минут на все сети</li>
+                        <li>50 SMS</li>
+                    </ul>
+                    <a href="index.html#payment" class="btn-select">Выбрать</a>
+                </div>
+                <!-- Карточка тарифа 2 -->
+                <div class="tariff-card">
+                    <h3>Тариф "Семейный"</h3>
+                    <p class="price">1490 ₽/мес</p>
+                    <ul class="tariff-features">
+                        <li>30 ГБ интернета</li>
+                        <li>1500 минут внутри сети</li>
+                        <li>Безлимитные соцсети</li>
+                    </ul>
+                    <a href="index.html#payment" class="btn-select">Выбрать</a>
+                </div>
+                <!-- Карточка тарифа 3 -->
+                <div class="tariff-card">
+                    <h3>Тариф "Для своих"</h3>
+                    <p class="price">590 ₽/мес</p>
+                    <ul class="tariff-features">
+                        <li>15 ГБ интернета</li>
+                        <li>500 минут на все сети</li>
+                        <li>Безлимитный мессенджеры</li>
+                    </ul>
+                    <a href="index.html#payment" class="btn-select">Выбрать</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container">
+            <p>&copy; 2026 MobiOperator. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

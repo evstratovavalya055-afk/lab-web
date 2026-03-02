@@ -1,0 +1,168 @@
+/* ===== Базовые стили, похожие на main, но с вариациями ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Другой шрифт для примера */
+    line-height: 1.6;
+    color: #222;
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Шапка и навигация - можно скопировать из main.css для единообразия, 
+   или оставить так, но это не принципиально. Для простоты я скопирую ключевые моменты,
+   но изменю, например, цвет шапки, чтобы показать разницу. */
+
+#main-header {
+    background: linear-gradient(135deg, #2a5a5a, #1e7b7b); /* Другой оттенок */
+    color: #fff;
+    padding: 15px 0;
+}
+#main-header h1 { font-size: 2rem; }
+#main-header .highlight { color: #ffcc66; }
+
+#main-nav {
+    background-color: #3a4a4a;
+}
+#main-nav ul {
+    list-style: none;
+    display: flex;
+}
+#main-nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+#main-nav a:hover {
+    background-color: #ffcc66;
+    color: #222;
+}
+#main-nav a.active {
+    background-color: #1e7b7b;
+}
+
+/* ===== Уникальный стиль для страницы тарифов ===== */
+.tariffs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.tariff-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tariff-card.popular {
+    border: 2px solid #ffaa00;
+    box-shadow: 0 0 15px rgba(255,170,0,0.3);
+    transform: scale(1.02);
+}
+
+.tariff-card h3 {
+    color: #1e7b7b;
+    margin-bottom: 15px;
+}
+
+.tariff-card .price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #004d66;
+    margin-bottom: 20px;
+}
+
+.tariff-features {
+    list-style: none;
+    margin-bottom: 25px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.tariff-features li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.tariff-features li::before { /* Псевдоэлемент */
+    content: "✓";
+    color: #ffaa00;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.btn-select {
+    display: inline-block;
+    background-color: #1e7b7b;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-select:hover {
+    background-color: #135e5e;
+}
+
+/* ===== Страница поддержки ===== */
+.support-info, .support-form {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.support-info h3, .support-form h3 {
+    color: #1e7b7b;
+    margin-bottom: 15px;
+}
+
+.support-info p {
+    margin-bottom: 10px;
+}
+
+.support-form .form-group {
+    margin-bottom: 15px;
+}
+
+.support-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.support-form input,
+.support-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ===== Подвал ===== */
+#main-footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}

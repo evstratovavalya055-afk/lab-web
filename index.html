@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobiOperator - Главная</title>
+    <!-- Подключаем стили. Для главной используем main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Также подключаем общий стиль, если нужно переопределить базовые вещи, но main.css должен быть приоритетнее. Либо делаем все в одном. По заданию: "Для главной страницы должен быть создан отдельный файл со стилем", поэтому основные стили продублируем в main.css, а остальные страницы будут использовать style.css -->
+    <!-- Для простоты я пропишу базовую структуру в main.css, а style.css будет для остальных страниц, но они могут наследовать общие моменты. -->
+</head>
+<body>
+    <!-- Шапка сайта (единая для всех) -->
+    <header id="main-header">
+        <div class="container">
+            <h1>Mobi<span class="highlight">Operator</span></h1>
+            <p>Всегда на связи</p>
+        </div>
+    </header>
+
+    <!-- Навигация (единое меню) -->
+    <nav id="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="tariffs.html">Тарифы</a></li>
+                <li><a href="#payment">Оплата</a></li> <!-- Ссылка на форму на этой же странице -->
+                <li><a href="support.html">Поддержка</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основной контент главной страницы -->
+    <main>
+        <div class="container">
+            <!-- Приветственный блок с уникальным id -->
+            <section id="welcome">
+                <h2>Добро пожаловать!</h2>
+                <p>MobiOperator — это современная связь, высокоскоростной интернет и выгодные тарифы для вас и вашей семьи.</p>
+            </section>
+
+            <!-- Блок преимуществ. Используем классы -->
+            <section id="advantages">
+                <h2>Наши преимущества</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-item">
+                        <h3>Покрытие 4G</h3>
+                        <p>Стабильная связь в любой точке региона.</p>
+                    </div>
+                    <div class="advantage-item">
+                        <h3>Выгодные тарифы</h3>
+                        <p>Конструктор тарифа и бесплатные звонки внутри сети.</p>
+                    </div>
+                    <div class="advantage-item">
+                        <h3>Мгновенная оплата</h3>
+                        <p>Оплачивайте услуги без комиссии на нашем сайте.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Форма оплаты услуг. Здесь используются id и классы -->
+            <section id="payment">
+                <h2>Оплата услуг</h2>
+                <!-- Важно: форма отправляется POST-запросом. В реальности тут был бы скрипт, но по заданию нам нужно сделать макет. Укажем action на страницу-заглушку. -->
+                <form action="payment.html" method="get" class="payment-form">
+                    <!-- Поле для номера с уникальным id -->
+                    <div class="form-group">
+                        <label for="phone-number">Номер телефона:</label>
+                        <input type="tel" id="phone-number" name="phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Сумма платежа (руб.):</label>
+                        <input type="number" id="amount" name="amount" min="10" value="100" required>
+                    </div>
+
+                    <!-- Поле для выбора способа оплаты (пример класса) -->
+                    <div class="form-group">
+                        <label for="payment-method">Способ оплаты:</label>
+                        <select id="payment-method" name="method" class="payment-select">
+                            <option value="card">Банковская карта</option>
+                            <option value="phone">С баланса телефона</option>
+                        </select>
+                    </div>
+
+                    <!-- Кнопка с псевдоклассом :hover будет стилизоваться -->
+                    <button type="submit" class="btn-pay">Оплатить</button>
+                </form>
+                <!-- Небольшое примечание -->
+                <p class="form-note">* После нажатия вы перейдете на защищенную страницу оплаты.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer id="main-footer">
+        <div class="container">
+            <p>&copy; 2026 MobiOperator. Все права защищены.</p>
+            <p><a href="#">Политика конфиденциальности</a> | <a href="#">Договор оферты</a></p>
+        </div>
+    </footer>
+</body>
+</html>

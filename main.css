@@ -1,0 +1,242 @@
+/* ===== Общие сбросы и база ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* ===== Шапка (id = main-header) ===== */
+#main-header {
+    background: linear-gradient(135deg, #004d66, #007a99);
+    color: #fff;
+    padding: 20px 0;
+    border-bottom: 3px solid #ffaa00;
+}
+
+#main-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+#main-header .highlight {
+    color: #ffaa00;
+}
+
+/* ===== Навигация (id = main-nav) ===== */
+#main-nav {
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+#main-nav li {
+    margin-right: 5px;
+}
+
+#main-nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Псевдокласс :hover для ссылок меню */
+#main-nav a:hover {
+    background-color: #ffaa00;
+    color: #333;
+}
+
+#main-nav a.active {
+    background-color: #007a99;
+    color: #fff;
+    border-bottom: 3px solid #ffaa00;
+}
+
+/* ===== Основной контент ===== */
+main {
+    min-height: 500px;
+}
+
+/* Приветственный блок (id = welcome) */
+#welcome {
+    background-color: #fff;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#welcome h2 {
+    color: #004d66;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+/* Блок преимуществ (id = advantages) */
+#advantages {
+    margin: 40px 0;
+}
+
+#advantages h2 {
+    text-align: center;
+    color: #004d66;
+    margin-bottom: 30px;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.advantage-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Псевдокласс :hover для карточек преимуществ */
+.advantage-item:hover {
+    transform: translateY(-5px);
+}
+
+.advantage-item h3 {
+    color: #007a99;
+    margin-bottom: 10px;
+}
+
+/* ===== Форма оплаты (id = payment) ===== */
+#payment {
+    background-color: #e9ecef;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 40px 0;
+}
+
+#payment h2 {
+    color: #004d66;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.payment-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Стили для полей ввода (используем псевдоклассы) */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Псевдокласс :focus для полей ввода */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007a99;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 122, 153, 0.5);
+}
+
+/* Псевдокласс :hover для полей ввода */
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #ffaa00;
+}
+
+/* Кнопка оплаты с классом btn-pay */
+.btn-pay {
+    background-color: #ffaa00;
+    color: #333;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Псевдокласс :hover для кнопки */
+.btn-pay:hover {
+    background-color: #e69900;
+    transform: scale(1.02);
+}
+
+/* Псевдокласс :active для кнопки (при нажатии) */
+.btn-pay:active {
+    transform: scale(0.98);
+}
+
+.form-note {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ===== Подвал ===== */
+#main-footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+#main-footer a {
+    color: #ffaa00;
+    text-decoration: none;
+}
+
+#main-footer a:hover {
+    text-decoration: underline;
+}
