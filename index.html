@@ -3,282 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Все лабы Варламова В.</title>
+    <title>Лабораторные работы</title>
     <style>
-        /* Общие стили */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        /* Главный контейнер */
-        .container {
+            font-family: Arial, sans-serif;
             max-width: 800px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            backdrop-filter: blur(10px);
-            animation: slideIn 0.8s ease-out;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
         }
 
-        /* Заголовок */
         h1 {
-            color: #2d3748;
-            font-size: 2.5rem;
+            color: #2c3e50;
             text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 4px solid #667eea;
-            position: relative;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            word-wrap: break-word;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
         }
 
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: #764ba2;
-            border-radius: 2px;
-        }
-
-        /* Список лабораторных работ */
         ul {
             list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+            padding: 0;
         }
 
         li {
-            transform: translateX(0);
-            transition: all 0.3s ease;
-            animation: fadeIn 0.5s ease-out forwards;
-            opacity: 0;
+            margin: 15px 0;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
         }
 
-        /* Задержки анимации для каждого пункта */
-        li:nth-child(1) { animation-delay: 0.1s; }
-        li:nth-child(2) { animation-delay: 0.2s; }
-        li:nth-child(3) { animation-delay: 0.3s; }
-        li:nth-child(4) { animation-delay: 0.4s; }
+        li:hover {
+            transform: translateX(5px);
+        }
 
-        /* Стили для ссылок */
         a {
             display: block;
-            padding: 20px 25px;
-            background: #f7fafc;
-            border-radius: 15px;
+            padding: 15px 20px;
             text-decoration: none;
-            color: #2d3748;
-            font-size: 1.1rem;
-            font-weight: 500;
-            border: 2px solid transparent;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            color: #333;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
         }
 
-        /* Номер лабораторной работы */
-        a::before {
-            content: '📁';
-            margin-right: 10px;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-
-        /* Эффект при наведении */
         a:hover {
-            transform: translateY(-5px) scale(1.02);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-color: #fff;
-            box-shadow: 0 20px 30px rgba(102, 126, 234, 0.4);
+            background-color: #f0f0f0;
         }
 
-        a:hover::before {
-            transform: rotate(10deg) scale(1.1);
-            content: '📂';
-        }
-
-        /* Эффект при нажатии */
-        a:active {
-            transform: translateY(0) scale(0.98);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Информация о студенте */
         .student-info {
             margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px dashed #cbd5e0;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
             text-align: center;
-            color: #718096;
-            font-size: 1rem;
-            animation: fadeIn 0.8s ease-out 0.5s both;
-        }
-
-        .student-info p {
-            margin-bottom: 10px;
-        }
-
-        .student-info i {
-            font-style: normal;
-            color: #667eea;
-            font-weight: 600;
-        }
-
-        /* Дата */
-        .date {
-            display: inline-block;
-            padding: 8px 20px;
-            background: #edf2f7;
-            border-radius: 30px;
-            color: #4a5568;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-
-        /* Счетчик работ */
-        .work-counter {
-            display: inline-block;
-            padding: 5px 15px;
-            background: #667eea;
-            color: white;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            margin-left: 10px;
-        }
-
-        /* Анимации */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Адаптация для мобильных устройств */
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            a {
-                padding: 15px 20px;
-                font-size: 1rem;
-            }
-
-            a::before {
-                margin-right: 8px;
-            }
-        }
-
-        /* Для очень маленьких экранов */
-        @media (max-width: 380px) {
-            h1 {
-                font-size: 1.4rem;
-            }
-
-            a {
-                padding: 12px 15px;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Стили для фокуса (доступность) */
-        a:focus {
-            outline: 3px solid #667eea;
-            outline-offset: 3px;
-        }
-
-        /* Украшение - волны в фоне */
-        .wave {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/></svg>');
-            background-size: cover;
-            background-repeat: no-repeat;
-            z-index: -1;
-            opacity: 0.5;
+            color: #666;
+            border: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
-    <div class="wave"></div>
-    <div class="container">
-        <h1>Лабораторные работы<br>Web-программирование</h1>
-        
-        <ul>
-            <li>
-                <a href="lab1/Letter/index.html">
-                    Лабораторная работа 1. Задание 1 (Письмо)
-                </a>
-            </li>
-            <li>
-                <a href="lab1/Planets/index.html">
-                    Лабораторная работа 1. Задание 2 (Планеты)
-                </a>
-            </li>
-            <li>
-                <a href="lab2/BirdWatching/index.html">
-                    Лабораторная работа 2 (BirdWatching)
-                </a>
-            </li>
-            <li>
-                <a href="lab3/MobiOperator/index.html">
-                    Лабораторная работа 3 (MobiOperator)
-                </a>
-            </li>
-        </ul>
+    <h1>Лабораторные работы<br>Web-программирование</h1>
+    
+    <ul>
+        <li>
+            <a href="lab1/Letter/index.html">
+                Лабораторная работа 1. Задание 1 (Письмо)
+            </a>
+        </li>
+        <li>
+            <a href="lab1/Planets/index.html">
+                Лабораторная работа 1. Задание 2 (Планеты)
+            </a>
+        </li>
+        <li>
+            <a href="lab2/BirdWatching/index.html">
+                Лабораторная работа 2 (BirdWatching)
+            </a>
+        </li>
+        <li>
+            <a href="lab3/MobiOperator/index.html">
+                Лабораторная работа 3 (MobiOperator)
+            </a>
+        </li>
+    </ul>
 
-        <div class="student-info">
-            <p><i>Варламова Валентина</i> 👩‍💻</p>
-            <p>Группа: <i>12002353</i></p>
-            <p class="date">📅 Март 2026</p>
-        </div>
+    <div class="student-info">
+        Варламова Валентина
     </div>
 </body>
 </html>
