@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица случайных цветов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            border: 2px solid #333;
+        }
+        
+        td {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            border: 1px solid #333;
+            transition: transform 0.2s;
+        }
+        
+        td:hover {
+            transform: scale(1.1);
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px 0 10px 0;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Таблица случайных цветов</h1>
+        
+        <button onclick="generateColorTable()">Сгенерировать новую таблицу</button>
+        
+        <div id="table-container">
+            <table id="color-table">
+                <!-- Таблица будет создана здесь -->
+            </table>
+        </div>
+        
+        <div class="info">
+            <p>Каждая ячейка содержит случайный цвет в формате RGB и его шестнадцатеричный код</p>
+            <p>Всего цветов: 64 (таблица 8×8)</p>
+        </div>
+    </div>
+
+    <script>
+        function getRandomColor() {
+            let r = Math.round(255 * Math.random());
+            let g = Math.round(255 * Math.random());
+            let b = Math.round(255 * Math.random());
+            
+            let rHex = r.toString(16).padStart(2, '0');
+            let gHex = g.toString(16).padStart(2, '0');
+            let bHex = b.toString(16).padStart(2, '0');
+            
+            let hexColor = '#' + rHex + gHex + bHex;
+            
+            return {
+                rgb: `rgb(${r}, ${g}, ${b})`,
+                hex: hexColor,
+                r: r,
+                g: g,
+                b: b
+            };
+        }
+        
+
+        function getTextColor(r, g, b) {
+            let brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+            return brightness > 128 ? '#000000' : '#ffffff';
+        }
+
+        function generateColorTable() {
+            let table = document.getElementById('color-table');
+            table.innerHTML = '';
+
+            for (let i = 0; i < 8; i++) {
+                let row = document.createElement('tr');
+                
+                for (let j = 0; j < 8; j++) {
+                    let cell = document.createElement('td');
+                    
+                    let color = getRandomColor();
+                    
+                    cell.style.backgroundColor = color.hex;
+                    
+                    cell.style.color = getTextColor(color.r, color.g, color.b);
+                    
+
+                    cell.textContent = color.hex.toUpperCase();
+                    
+                    cell.title = color.rgb;
+                    
+                    row.appendChild(cell);
+                }
+                
+                table.appendChild(row);
+            }
+        }
+        
+        window.onload = generateColorTable;
+    </script>
+</body>
+</html>
