@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid #000;
+}
+
+caption {
+    font-size: 14px;
+    padding: 10px;
+    caption-side: bottom;
+    text-align: left;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Класс для черной рамки вокруг столбца с названиями планет */
+.planet-name-border {
+    border-left: 3px solid #000 !important;
+    border-right: 3px solid #000 !important;
+}
+
+.planet-name-border-top {
+    border-top: 3px solid #000 !important;
+}
+
+.planet-name-border-bottom {
+    border-bottom: 3px solid #000 !important;
+}
+
+/* Заголовки столбцов */
+thead th {
+    background-color: #ccc;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Заголовки групп (Terrestrial planets, Jovian planets и т.д.) */
+tbody th[scope="rowgroup"] {
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+/* Заголовки названий планет */
+tbody th {
+    background-color: #e6e6e6;
+    font-weight: bold;
+}
+
+/* Подзаголовки (Gas giants, Ice giants) */
+tbody th[scope="rowgroup"] + th[scope="rowgroup"] {
+    background-color: #ccc;
+}
+
+/* Чередование строк для данных */
+tbody tr {
+    background-color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Числа выравниваем вправо */
+td {
+    text-align: right;
+}
+
+/* Notes - влево */
+td:last-child {
+    text-align: left;
+}
+
+/* Ссылка в Pluto */
+a {
+    color: #00f;
+    text-decoration: underline;
+}
