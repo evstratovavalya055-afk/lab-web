@@ -21,7 +21,7 @@
             <ul>
                 <li><a href="index.html" class="active">Главная</a></li>
                 <li><a href="tariffs.html">Тарифы</a></li>
-                <li><a href="#payment">Оплата</a></li> 
+                <li><a href="payment.html">Оплата</a></li> 
                 <li><a href="support.html">Поддержка</a></li>
             </ul>
         </div>
@@ -51,32 +51,6 @@
                         <p>Оплачивайте услуги без комиссии на нашем сайте.</p>
                     </div>
                 </div>
-            </section>
-
-            <section id="payment">
-                <h2>Оплата услуг</h2>
-                <form action="payment.html" method="get" class="payment-form">
-                    <div class="form-group">
-                        <label for="phone-number">Номер телефона:</label>
-                        <input type="tel" id="phone-number" name="phone" placeholder="+7 (___) ___-__-__" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="amount">Сумма платежа (руб.):</label>
-                        <input type="number" id="amount" name="amount" min="10" value="100" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="payment-method">Способ оплаты:</label>
-                        <select id="payment-method" name="method" class="payment-select">
-                            <option value="card">Банковская карта</option>
-                            <option value="phone">С баланса телефона</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn-pay">Оплатить</button>
-                </form>
-                <p class="form-note">* После нажатия вы перейдете на защищенную страницу оплаты.</p>
             </section>
         </div>
     </main>
