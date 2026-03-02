@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ЛР8 - Задание 1 (Вариант 5)</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/script8_task1.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Лабораторная работа №8</h2>
+        <h3>Задание 1: Приветствие и вычисление гипотенузы</h3>
+        <div class="variant">Вариант 5: Использование объектов Date, Array и Math</div>
+        
+        <!-- Здесь будет выведено приветствие с датой -->
+        <div id="greeting" class="greeting"></div>
+        
+        <hr>
+        
+        <h4>Вычисление гипотенузы прямоугольного треугольника</h4>
+        
+        <form name="form1">
+            <table>
+                <tr>
+                    <td colspan="2" class="formula">
+                        <b>Формулы:</b><br>
+                        • Прилежащий угол: гипотенуза = катет / cos(угол)<br>
+                        • Противолежащий угол: гипотенуза = катет / sin(угол)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Длина катета (a):</td>
+                    <td><input type="text" name="leg" size="15" placeholder="например: 5"></td>
+                </tr>
+                <tr>
+                    <td>Величина угла (градусы):</td>
+                    <td><input type="text" name="angle" size="15" placeholder="например: 30"></td>
+                </tr>
+                <tr>
+                    <td>Тип угла:</td>
+                    <td>
+                        <select name="angleType">
+                            <option value="adjacent" selected>Прилежащий к катету</option>
+                            <option value="opposite">Противолежащий катету</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Результат:</td>
+                    <td><input type="text" name="result" size="30" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="buttons">
+                        <input type="button" value="Вычислить гипотенузу" onClick="calculateHypotenuse(form1)">
+                        <input type="reset" value="Очистить" onClick="clearResult(form1)">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+    </div>
+</body>
+</html>
