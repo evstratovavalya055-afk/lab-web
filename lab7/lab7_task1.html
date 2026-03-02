@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ЛР7 - Задание 1 (Вариант 5)</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Лабораторная работа №7</h2>
+        <h3>Задание 1: Порядковый номер дня недели</h3>
+        <p class="variant">Вариант 5: По названию дня недели вывести его порядковый номер</p>
+        
+        <form name="form1">
+            <table>
+                <tr>
+                    <td>Введите день недели:</td>
+                    <td><input type="text" name="day" size="20" placeholder="например: понедельник"></td>
+                </tr>
+                <tr>
+                    <td>Результат:</td>
+                    <td><input type="text" name="res" size="30" readonly 
+                               style="background-color:#f0f0f0; font-weight:bold;"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="buttons">
+                        <input type="button" value="Найти номер" onClick="getDayNumber(form1)">
+                        <input type="reset" value="Очистить" 
+                               onClick="document.form1.res.value=''">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+        <div class="info">
+            <p><b>Описание:</b> При вводе названия дня недели и нажатии кнопки "Найти номер" 
+            выводится порядковый номер дня (понедельник - 1, вторник - 2 и т.д.).</p>
+            <p><b>Используется:</b> оператор switch для выбора дня недели.</p>
+            <p><i>Допустимые варианты ввода: понедельник, вторник, среда, четверг, пятница, суббота, воскресенье</i></p>
+        </div>
+        
+    </div>
+    
+    <script src="scripts/script7_task1.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ЛР7 - Задание 2 (Вариант 5)</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Лабораторная работа №7</h2>
+        <h3>Задание 2: Проверка числа на простоту</h3>
+        <p class="variant">Вариант 5: Узнать, является ли число, введенное пользователем, простым</p>
+        
+        <form name="form2">
+            <table>
+                <tr>
+                    <td>Введите натуральное число:</td>
+                    <td><input type="text" name="num" size="15"></td>
+                </tr>
+                <tr>
+                    <td>Результат:</td>
+                    <td><input type="text" name="res" size="35" readonly 
+                               style="background-color:#f0f0f0; font-weight:bold;"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="buttons">
+                        <input type="button" value="Проверить" onClick="checkPrime(form2)">
+                        <input type="reset" value="Очистить" 
+                               onClick="document.form2.res.value=''">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+        <div class="info">
+            <p><b>Описание:</b> Определяет, является ли введенное число простым 
+            (делится только на 1 и на себя). Используется цикл for для проверки делителей.</p>
+            <p><i>Простое число — это натуральное число больше 1, которое имеет ровно два делителя: 1 и само себя.</i></p>
+        </div>
+        
+    </div>
+    
+    <script src="scripts/script7_task2.js"></script>
+</body>
+</html>
